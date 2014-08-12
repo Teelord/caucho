@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.caucho</groupId>
     <artifactId>quercus</artifactId>
-    <version>4.0.39</version>
+    <version>4.0.39-MOD1</version>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
