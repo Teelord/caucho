@@ -62,7 +62,6 @@ public class ResinChoose extends ResinControl implements FlowBean {
 
   @PostConstruct
   public void init()
-    throws Throwable
   {
     Object object = getObject();
     
