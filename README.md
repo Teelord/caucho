@@ -1,7 +1,7 @@
 # READ ME
 
-This repository contains a modified version of [Quercus][] that can be built
-with Apache [Maven][].
+This repository contains a modified version of the [Quercus][] *source code*
+that can be built with Apache [Maven][].
 It also includes changes for the final release version of the [Java
 Caching API][] and `@PostConstruct` fixes required to run it on [GlassFish
 Server][] 4.
