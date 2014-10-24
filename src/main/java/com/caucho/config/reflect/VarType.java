@@ -189,17 +189,14 @@ public class VarType<D extends GenericDeclaration> extends BaseType
       return null;
     }
 
-    @Override
     public <T extends Annotation> T getAnnotation(Class<T> annotationClass) {
       return null;
     }
 
-    @Override
     public Annotation[] getAnnotations() {
       return new Annotation[0];
     }
 
-    @Override
     public Annotation[] getDeclaredAnnotations() {
       return new Annotation[0];
     }
