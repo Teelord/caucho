@@ -3,8 +3,41 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.caucho</groupId>
     <artifactId>quercus</artifactId>
-    <version>4.0.39-MOD2</version>
     <packaging>jar</packaging>
+    <name>Quercus</name>
+    <version>4.0.39-MOD2-SNAPSHOT</version>
+    <description>
+        PHP script engine written in Java.
+    </description>
+    <url>http://quercus.caucho.com/</url>
+    <!-- No issueManagement and developers yet. -->
+    <licenses>
+        <license>
+            <name>GNU Affero General Public License</name>
+            <url>http://www.gnu.org/licenses/agpl.html</url>
+            <comments>Version 3 (or any later version)</comments>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:hg:https://bitbucket.org/kazssym/quercus-maven</connection>
+        <developerConnection>scm:hg:https://bitbucket.org/kazssym/quercus-maven</developerConnection>
+        <tag>default</tag>
+        <url>https://bitbucket.org/kazssym/quercus-maven/src</url>
+    </scm>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <dependency>
             <groupId>javax.cache</groupId>
@@ -48,7 +81,5 @@
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
     </properties>
 </project>
