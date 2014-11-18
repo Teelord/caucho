@@ -122,7 +122,7 @@
     </dependencies>
     <distributionManagement>
         <snapshotRepository>
-            <id>local</id>
+            <id>local-snapshots</id>
             <url>http://alfa.local.linuxfront.com/alfa/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
