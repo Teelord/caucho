@@ -123,7 +123,7 @@
     <distributionManagement>
         <snapshotRepository>
             <id>alfa.vx68k.org</id>
-            <url>https://alfa.vx68k.org/snapshots/</url>
+            <url>http://alfa.vx68k.org/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
     <properties>
