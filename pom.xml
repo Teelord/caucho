@@ -122,8 +122,8 @@
     </dependencies>
     <distributionManagement>
         <snapshotRepository>
-            <id>local-snapshots</id>
-            <url>http://alfa.local.linuxfront.com/alfa/snapshots</url>
+            <id>alfa.vx68k.org</id>
+            <url>https://alfa.vx68k.org/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
     <properties>
