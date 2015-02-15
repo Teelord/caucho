@@ -173,8 +173,8 @@ public class DateTimeZone implements Cloneable
       Date now = new Date();
       boolean isDST = _timeZone.inDaylightTime(now);
       // TODO: Implement a better method.
-      final long DAY = 86400 * 1000;
-      final long MINUTE = 60 * 1000;
+      final long DAY = 86400 * 1000L;
+      final long MINUTE = 60 * 1000L;
       // Rounds down to days.
       long time = now.getTime() / DAY * DAY;
       long limit = time + 365 * DAY;
@@ -185,20 +185,21 @@ public class DateTimeZone implements Cloneable
         if (_timeZone.inDaylightTime(date) != isDST) {
           // Goes back one day.
           time -= DAY;
-          // Assumes transitions occur at zero seconds.
-          for (;;) {
-            time += MINUTE;
-            date = new Date(time);
-            if (_timeZone.inDaylightTime(date) != isDST) {
-              break;
-            }
-          }
+          break;
         }
       }
       if (time <= limit) {
         final DateFormat ISO8601_FORMAT
                 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ",
                                        Locale.ROOT);
+        // Assumes transitions occur at zero seconds.
+        for (;;) {
+          time += MINUTE;
+          date = new Date(time);
+          if (_timeZone.inDaylightTime(date) != isDST) {
+            break;
+          }
+        }
         isDST = _timeZone.inDaylightTime(date);
         ArrayValue transition = new ArrayValueImpl();
         transition.put("ts", time / 1000);
