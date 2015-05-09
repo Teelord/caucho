@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
+ * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
  * This file is part of Resin(R) Open Source
  *
@@ -19,30 +19,27 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with Resin Open Source; if not, write to the
- *   Free SoftwareFoundation, Inc.
+ *
+ *   Free Software Foundation, Inc.
  *   59 Temple Place, Suite 330
  *   Boston, MA 02111-1307  USA
  *
- * @author Sam
+ * @author Scott Ferguson
  */
 
+package com.caucho.config.reflect;
 
-package com.caucho.quercus.annotation;
-
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.reflect.GenericDeclaration;
+import java.lang.reflect.Type;
 
 /**
- * Mark a method such that if execution of the method returns null,
- * the value returned to the Quercus caller is instead
- * {@link com.caucho.quercus.env.BooleanValue#FALSE}.
+ * Unannotated version of {@link java.lang.reflect.TypeVariable} for Java SE 8.
  *
- * Note that the return value is not modified if
- * the method returns {@link com.caucho.quercus.env.NullValue#NULL}.
+ * @author Kaz Nishimura
  */
-@Target(ElementType.METHOD)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface ReturnNullAsFalse {
+public interface UnannotatedTypeVariable<D extends GenericDeclaration>
+        extends Type {
+    Type[] getBounds();
+    D getGenericDeclaration();
+    String getName();
 }
